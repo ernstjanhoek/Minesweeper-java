@@ -1,6 +1,5 @@
 package minesweeper;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -8,7 +7,7 @@ import static minesweeper.Point.PointState.*;
 
 class Point {
     enum PointState {
-        MARKED, UNMARKED, EXPLORED;
+        MARKED, UNMARKED, EXPLORED
     }
     boolean mine;
     private final int x;
@@ -53,9 +52,6 @@ class Point {
     protected void increaseSurroundingMines() {
         this.surroundingMines++;
     }
-    public PointState getState() {
-        return this.state;
-    }
     public int getX() {
         return x;
     }
@@ -67,9 +63,6 @@ class Point {
         this.x = x;
         this.y = y;
         this.surroundingMines = 0;
-    }
-    protected Point clone() {
-        return this;
     }
     protected boolean equals(Point otherPoint) {
         return (this.y == otherPoint.getY() && this.x == otherPoint.getX() && this.mine == otherPoint.mine);
@@ -93,12 +86,6 @@ class Minefield implements IndexMath {
     static private final Random random = new Random();
     protected Point[][] minefield;
     protected ArrayList<Point> totalMines;
-    public Point[][] getMinefield() {
-        return minefield;
-    }
-    public ArrayList<Point> getRandomPoints() {
-        return totalMines;
-    }
     Minefield(int size, int mines) {
         this.minefield = new Point[size][size];
         for (int i = 0; i < size; i++) {
@@ -138,7 +125,7 @@ class Minefield implements IndexMath {
     }
     private void placeMines() {
         for (Point mine : this.totalMines) {
-            this.minefield[mine.getY()][mine.getX()] = mine.clone();
+            this.minefield[mine.getY()][mine.getX()] = mine;
         }
     }
     public String display(DisplayMode mode) {
@@ -166,7 +153,7 @@ enum DisplayMode {
     OPEN, FOW,
 }
 enum CommandEnum {
-    FREE, MINE;
+    FREE, MINE
 }
 class Game extends Minefield implements IndexMath {
     int explored = 0;
@@ -181,7 +168,7 @@ class Game extends Minefield implements IndexMath {
     Game(int size, int mines) {
         super(size, mines);
         this.isRunning = true;
-        this.flags = new ArrayList<Point>();
+        this.flags = new ArrayList<>();
     }
     public boolean isRunning() {
         return this.isRunning;
@@ -201,7 +188,7 @@ class Game extends Minefield implements IndexMath {
             SizeLimit limit = new SizeLimit(localPoint.getY(), localPoint.getX(), intToIndex(this.minefield.length), intToIndex(this.minefield[0].length));
             for (int y = limit.yStartClamped; y <= limit.yEndClamped; y++) {
                 for (int x = limit.xStartClamped; x <= limit.xEndClamped; x++) {
-                    Point checkedPoint = this.minefield[y][x].clone();
+                    Point checkedPoint = this.minefield[y][x];
                     if (checkedPoint.state != EXPLORED && !checkedPoint.hasMine()) {
                         this.minefield[y][x].state = EXPLORED;
                         explored++;
@@ -238,7 +225,7 @@ class Game extends Minefield implements IndexMath {
             throw new NumberException();
         }
         super.minefield[this.yCoordinate][this.xCoordinate].state = MARKED;
-        flags.add(super.minefield[this.yCoordinate][xCoordinate].clone());
+        flags.add(super.minefield[this.yCoordinate][xCoordinate]);
     }
     private void removeFlag() {
         super.minefield[this.yCoordinate][this.xCoordinate].state = UNMARKED;
@@ -263,7 +250,7 @@ class MineException extends Exception {
     }
 }
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
         int size = 9;
         System.out.println("How many mines do you want on the field?");
