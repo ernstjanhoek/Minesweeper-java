@@ -1,0 +1,28 @@
+# course config files
+*.yaml
+
+# gradle
+.gradle/
+build
+
+
+# idea config
+.idea
+
+# old stages
+/Minesweeper (Java)/*
+!/Minesweeper (Java)/task/
+/Minesweeper (Java)/task/*
+!/Minesweeper (Java)/task/src
+
+# Project exclude paths
+/Topics/ArrayList/Concat positive numbers/out/
+/Topics/ArrayList/Concat positive numbers/out/production/classes/
+/Topics/ArrayList/Creating list/out/
+/Topics/ArrayList/Creating list/out/production/classes/
+/Topics/Random class/Gaussian random numbers/out/
+/Topics/Random class/Gaussian random numbers/out/production/classes/
+/Topics/Stack/Getting the max element of a stack/out/
+/Topics/Stack/Getting the max element of a stack/out/production/classes/
+/Topics/Stack/Which brackets are balanced/out/
+/Topics/Stack/Which brackets are balanced/out/production/classes/
