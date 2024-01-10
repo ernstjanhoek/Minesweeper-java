@@ -1,9 +1,12 @@
-## Description
+## Minesweeper Java Project
 
-Dit is een *Minesweeper (Java)* project dat ik tijdens mijn CodeGorilla bootcamp heb gemaakt. De implementatie requirements komen van hyperskill.org, een platform waar ik leer programmeren in java. Hier heb ik geleerd over Big O Notation, computational complexity en stacks. In de game class (https://github.com/ernstjanhoek/Minesweeper-java/blob/master/Minesweeper%20(Java)/task/src/minesweeper/Game.java) heb ik een explore method gemaakt. Deze method berekent in O(N) welke velden rondom een onderzocht veld vrij zijn.
+Dit Minesweeper-project in Java is ontwikkeld tijdens mijn CodeGorilla bootcamp. De implementatievereisten zijn afkomstig van hyperskill.org, een platform waar ik programmeer in Java leer. Tijdens mijn leertraject heb ik kennis opgedaan over Big O Notation, computationele complexiteit en stacks.
 
-<p>You played this game when the Internet cut off, didn’t you? It is time to remember the good old days. In this project, you will create your own "Minesweeper" game.</p><br/><br/>Learn more at <a href="https://hyperskill.org/projects/77?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card">https://hyperskill.org/projects/77</a>
+In de Game-klasse (https://github.com/ernstjanhoek/Minesweeper-java/blob/master/Minesweeper%20(Java)/task/src/minesweeper/Game.java) heb ik een 'explore' methode geïmplementeerd. Deze methode berekent in O(N) welke velden rondom een onderzocht veld vrij zijn. Deze aanpak zorgt voor efficiënte en snelle berekeningen.
+Belangrijkste kenmerken
 
-Here's the link to the project: https://hyperskill.org/projects/77
+    Implementatievereisten: Gebaseerd op de eisen van hyperskill.org.
+    Leerdoelen: Tijdens dit project heb ik mijn begrip van Big O Notation, computationele complexiteit en stacks versterkt.
+    Explore Methode: In de Game-klasse heb ik een 'explore' methode gecreëerd die in O(N) de omliggende velden van een onderzocht veld berekent.
 
-Check out my profile: https://hyperskill.org/profile/573295829
+Voel je vrij om bij te dragen en verbeteringen voor te stellen. Veel plezier met Minesweeper in Java!
